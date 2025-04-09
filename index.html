@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moodify – Mood Based Music Player</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container" id="home-page">
+    <div class="header">
+      <h1>Moodify <span class="music-emoji">🎵</span></h1>
+      <p class="subtitle">Discover music that matches your current mood</p>
+    </div>
+    
+    <div class="mood-selection">
+      <h2>How are you feeling today?</h2>
+      <div class="mood-buttons">
+        <button class="mood-btn happy" onclick="selectMood('happy')">
+          <span class="emoji">😊</span> Happy
+        </button>
+        <button class="mood-btn sad" onclick="selectMood('sad')">
+          <span class="emoji">😢</span> Sad
+        </button>
+        <button class="mood-btn angry" onclick="selectMood('angry')">
+          <span class="emoji">😠</span> Angry
+        </button>
+        <button class="mood-btn calm" onclick="selectMood('calm')">
+          <span class="emoji">😌</span> Calm
+        </button>
+      </div>
+    </div>
+    
+    <div class="wave-bg"></div>
+  </div>
+
+  <div class="container" id="player-page" style="display:none;">
+    <button class="back-btn" onclick="goBack()">← Back</button>
+    <h1 id="mood-header">Now Playing</h1>
+    <div class="player-container">
+      <div id="album-art"></div>
+      <div class="player-controls">
+        <h2 id="now-playing">Select a song to play</h2>
+        <div class="progress-container">
+          <div id="progress-bar"></div>
+        </div>
+        <div class="time-display">
+          <span id="current-time">0:00</span>
+          <span id="total-time">0:00</span>
+        </div>
+        <div class="controls">
+          <button onclick="prevSong()">⏮</button>
+          <button onclick="togglePlay()" id="play-btn">▶</button>
+          <button onclick="nextSong()">⏭</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="suggestions">
+      <h3>Recommended Songs:</h3>
+      <ul id="suggestions-list"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
